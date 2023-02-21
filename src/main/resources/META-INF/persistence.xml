@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xml 네임스페이스와 사용할 버전 지정-->
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <!--영속성 유닛 - 연결할 데이터베이스당 하나의 영속성 유닛을 등록함 name은 영속성 유닛의 고유한 이름-->
+    <persistence-unit name="jpastudy">
+        <properties>
+            <!--필수-->
+            <!--JPA 표준 속성 - 특정 구현체에 종속되지 않는다-->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/> <!--jdbc 드라이버-->
+            <property name="javax.persistence.jdbc.user" value="root"/> <!--데이터베이스 접속 아이디-->
+            <property name="javax.persistence.jdbc.password" value=""/> <!--데이터베이스 접속 비밀번호-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_study"/> <!--데이터베이스 접속 URL-->
+            <!--하이버네이트 속성 - 하이버네이트 전용 속성이라 하이버네이트에서만 사용할 수 있다-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/> <!--데이터베이스 방언 설정-->
+            <!--옵션-->
+            <property name="hibernate.show_sql" value="true"/> <!--하이버네이트가 실행한 sql을 출력-->
+            <property name="hibernate.format_sql" value="true"/> <!--하이버네이트가 실행한 sql을 출력할 때 보기 좋게 만듦-->
+            <property name="hibernate..use_sql_comments" value="true"/> <!--쿼리를 출력할 때 주석도 함께 출력-->
+            <property name="hibernate.id.new_generator_mappings" value="true"/> <!--jpa표준에 맞춘 새로운 키 생성 전략을 사용-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/> <!--애플리케이션 실행 시점에 데이터베이스 테이블을 자동으로 생성-->
+
+        </properties>
+
+    </persistence-unit>
+</persistence>
